@@ -53,13 +53,15 @@ public class SeaBoard {
     }
 
     private void sink(int line, int column) {
-        int[][] commands = new int[][]  // массив всех возможных полей,
-                //которые надо поменять
-                {{line - 1, column}, {line + 1, column}, // вокруг
-                        //клетки, в которую попали
-                        {line, column - 1}, {line, column + 1},
-                        {line - 1, column - 1}, {line - 1, column + 1},
-                        {line + 1, column - 1}, {line + 1, column + 1}};
+        int[][] commands = new int[][] { // массив всех возможных полей,которые надо поменять
+                {line - 1, column},
+                {line + 1, column},
+                {line, column - 1},
+                {line, column + 1},
+                {line - 1, column - 1},
+                {line - 1, column + 1},
+                {line + 1, column - 1},
+                {line + 1, column + 1}};
 
         for (int[] i : commands) {
             if (0 <= i[0] && i[0] <= 9 && 0 <= i[1] && i[1] <= 9 && field[i[0]][i[1]].equals(".")) {
