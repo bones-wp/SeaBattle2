@@ -25,29 +25,23 @@ public class SeaBoard {
         String[][] result = new String[10][10];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                if (field[i][j].equals("X")) result[i][j] = "x"; // как и
-                    //говорилось в начале
-                else result[i][j] = field[i][j];                 //
-                //искусственно заменяем X на x
+                if (field[i][j].equals("X")) result[i][j] = "x"; // как и говорилось в начале
+                else result[i][j] = field[i][j];  //искусственно заменяем X на x
             }
         }
         return result; // создаем геттер для поля
     }
 
     String check(int line, int column) {
-        if (field[line][column].equals("X")) return "x"; // тоже
-        //искусственно заменяем X на x
+        if (field[line][column].equals("X")) return "x"; // тоже искусственно заменяем X на x
         return field[line][column]; // метод чек, для проверки полей
     }
 
     void shoot(int line, int column, String issue) {
-        if (issue.equals("m")) field[line][column] = "#"; // если
-            //промахнулись, то просто ставим промах
-        else if (issue.equals("h")) field[line][column] = "X"; // если
-            //попали, но не потопили, то ставим X
+        if (issue.equals("m")) field[line][column] = "#"; // если промахнулись, то просто ставим промах
+        else if (issue.equals("h")) field[line][column] = "X"; // если попали, но не потопили, то ставим X
         else {
-            field[line][column] = "X"; // если же этим выстрелом корабль
-            //был потоплен, то ставим попадание
+            field[line][column] = "X"; // если же этим выстрелом корабль был потоплен, то ставим попадание
             sink(line, column);        // и обрабатываем уничтожение в методе sink
         }
     }

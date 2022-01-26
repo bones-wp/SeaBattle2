@@ -11,7 +11,7 @@ class Main {
 
 
         for (int i = 0; i < board.getField().length; i++) {
-            for (int j = 0; j < board.getField()[0].length; j++) {
+            for (int j = 0; j < board.getField().length; j++) {
                 System.out.print(board.getField()[i][j] + " ");
             }
             System.out.println();
